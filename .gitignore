@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Mac OS
+.DS_Store
+
+# Fly.io + deployment
+fly.toml.local
+.fly/
+
+# Docker
+*.dockerfile
+docker-compose.yml
+docker-compose.override.yml
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+
+# GitHub metadata (optional if not using GitHub actions)
+.github/
+
+# Misc
+*.bak
+*.tmp
