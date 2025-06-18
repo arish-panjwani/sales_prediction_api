@@ -1,0 +1,15 @@
+app = "sales-prediction-api"
+primary_region = "yyz"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"        # Stops VM when idle
+  auto_start_machines = true         # Auto-restarts on request
+  min_machines_running = 0           # No machine stays on unless needed
+  processes = ["app"]
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory = "256mb"                   # Minimum memory eligible for free tier

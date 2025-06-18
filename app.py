@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # ✅ import CORS properly
+from flask_cors import CORS
 from model import SalesPredictor
+import os  # ✅ import os for environment variables
 
 app = Flask(__name__)
-CORS(app)  # ✅ enable CORS for all routes
+CORS(app)
 
 predictor = SalesPredictor("Preprocessed-v2.csv")
 
@@ -27,4 +28,5 @@ def predict_sales():
     })
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # ✅ Bind to 0.0.0.0 and dynamic PORT for Fly.io
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
